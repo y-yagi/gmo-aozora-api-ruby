@@ -10,8 +10,6 @@ Swagger Codegen version: 2.4.0
 
 =end
 
-require 'erb'
-
 module SwaggerClient
   class Configuration
     # Defines url scheme
@@ -174,8 +172,7 @@ module SwaggerClient
     end
 
     def base_url
-      url = "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      ERB::Util.url_encode(url)
+      "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
     end
 
     # Gets API key (with prefix if set).
