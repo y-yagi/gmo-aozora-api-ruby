@@ -36,6 +36,14 @@ Dir.glob(File.expand_path('../swagger_client/webhook/api/*', __FILE__)).each do 
   require file
 end
 
+# files for corporation
+Dir.glob(File.expand_path('../swagger_client/corporation/models/*', __FILE__)).each do |file|
+  require file
+end
+
+Dir.glob(File.expand_path('../swagger_client/corporation/api/*', __FILE__)).each do |file|
+  require file
+end
 
 module SwaggerClient
   class << self
